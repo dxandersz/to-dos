@@ -1,14 +1,15 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const session = require('express-session'):
+const session = require('express-session');
 
 const toDoRouter = require('./routes/user-router.js');
 
 const app = express();
 require('dotenv').config();
 
-app.use(methodOverride('_method'));
+var methodOverride = require('method-override')
+app.use(methodOverride('_method'))
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,7 +29,7 @@ app.get('/', (req, res) => {
     });
 });
 
-app.use('/todos', todoRouter);
+app.use('/todos', toDoRouter);
 
 app.use('*', (req, res) => {
     res.status(404).send({
@@ -36,6 +37,6 @@ app.use('*', (req, res) => {
     });
 });
 
-app.use(err, req, res, next) => {
+app.use((err, req, res, next) => {
     res.status(500).send({ err, message: err.message });
-}
+});
