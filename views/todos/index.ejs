@@ -1,0 +1,16 @@
+<%- include ('../partials/boilerplate') %>
+
+  <a href="/todos/add">Add a To-Do</a>
+  <div class="todo">
+    <% for (let todo of data.todos) { %>
+      <div class="todo">
+        <h3><%= todo.todo %></h3>
+        <a href="/todos/<%= todo.id%>">Learn more</a>
+        <form method="POST" action="/todos/<%= todo.id %>?_method=DELETE">
+          <input type="submit" value="delete todo">
+        </form>
+      </div>
+    <% } %>
+  </div>
+
+<%- include ('../partials/end') %>

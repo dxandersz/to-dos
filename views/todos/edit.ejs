@@ -1,0 +1,9 @@
+<%- include('../partials/boilerplate') %>
+
+<form method="POST" action="/todos/<%= todo.id %>?_method=PUT">
+  <input type="text" name="todo" value="<%= todo.todo %>" placeholder="To Do" />
+  <input type="number" name="time" value="<%= todo.time %>" placeholder="Time" />
+  <input type="submit" value="Edit <%= animal.name %>" />
+</form>
+
+<%- include('../partials/end') %>
