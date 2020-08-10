@@ -35,8 +35,20 @@ class ToDo {
     }
 
     update(changes) {
-        
+        Object.assign(this, changes);
+        return db.oneOrNone(
+            `UPDATE todos SET
+            todo = $/todo/,
+            date = $/date/ WHERE id = $/id/ RETURNING *`,
+                this)
+            .then((todo) => {
+                return Object.assign(this, todo);
+            });
     }
 
-
+    delete() {
+        return db.oneOrNone(`DELETE FROM todos WHERE id = $1`, this.id);
+    }
 }
+
+module.exports = ToDo
