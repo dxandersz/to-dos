@@ -1,5 +1,5 @@
 requestAnimationFrame('dotenv').config();
-const DB_NAME = process.env.DB_NAME || "to-dos";
+const DB_NAME = process.env.DB_NAME || "todos";
 
 const options= {
     query: (e) => {

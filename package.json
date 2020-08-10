@@ -1,10 +1,10 @@
 {
   "name": "to-do-app",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -12,20 +12,6 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "morgan": "^1.10.0",
-    "passport": "^0.4.1",
-    "password": "^0.1.1",
     "pg-promise": "^10.5.8",
-    "pgp": "^0.1.0"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dxandersz/to-dos.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dxandersz/to-dos/issues"
-  },
-  "homepage": "https://github.com/dxandersz/to-dos#readme",
-  "description": ""
+  }
 }
